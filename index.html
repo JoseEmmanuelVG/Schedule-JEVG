@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Horario Semanal</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 5px; text-align: center; }
+    .libre { background-color: lightgreen; }
+    .adispo { background-color: khaki; }
+    .ocupado { background-color: lightcoral; }
+  </style>
+</head>
+<body>
+  <h1>Horario Semanal</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Día</th>
+        <th>00:00–06:00</th>
+        <th>06:00–13:00</th>
+        <th>13:00–19:00</th>
+        <th>19:00–21:30</th>
+        <th>21:30–24:00</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Lunes</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Martes</td><td class="ocupado"></td><td class="adispo"></td><td colspan="3" class="libre"></td></tr>
+      <tr><td>Miércoles</td><td colspan="5" class="libre"></td></tr>
+      <tr><td>Jueves</td><td colspan="3" class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Viernes</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Sábado</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Domingo</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
