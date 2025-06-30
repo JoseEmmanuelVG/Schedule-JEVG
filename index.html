@@ -1,15 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Horario Semanal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horario Semanal - JEVG</title>
   <style>
-    body { font-family: Arial, sans-serif; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 5px; text-align: center; }
-    .libre { background-color: lightgreen; }
-    .adispo { background-color: khaki; }
-    .ocupado { background-color: lightcoral; }
+    :root {
+      --color-libre: #4ade80;         /* verde suave */
+      --color-adispo: #facc15;        /* amarillo cálido */
+      --color-ocupado: #f87171;       /* rojo coral */
+      --color-bg: #f9fafb;
+      --color-text: #111827;
+      --color-border: #d1d5db;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #1f2937;
+        --color-text: #f3f4f6;
+        --color-border: #374151;
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: system-ui, Inter, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1000px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--color-border);
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: var(--color-border);
+      font-weight: 600;
+    }
+
+    .libre {
+      background-color: var(--color-libre);
+    }
+
+    .adispo {
+      background-color: var(--color-adispo);
+    }
+
+    .ocupado {
+      background-color: var(--color-ocupado);
+    }
+
+    @media (max-width: 768px) {
+      table {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -37,3 +103,4 @@
   </table>
 </body>
 </html>
+
