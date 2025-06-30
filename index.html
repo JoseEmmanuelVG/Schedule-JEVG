@@ -80,6 +80,26 @@
 </head>
 <body>
   <h1>Horario Semanal - JEVG</h1>
+  
+  <p style="max-width: 800px; text-align: center; margin-bottom: 1.5rem;">
+    Este es el <strong>horario actual</strong>, puede tener cambios cuando se vuelva a visualizar tiempo después esta página. <br>
+    Las franjas en <span class="adispo"><strong>amarillo</strong></span> (a disponibilidad) pueden cambiar con <strong>24 horas de antelación</strong>; de lo contrario, se consideran <span class="ocupado"><strong>ocupadas</strong></span>.
+  </p>
+
+  <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+    <span style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="libre" style="width: 16px; height: 16px; display: inline-block; border: 1px solid var(--color-border);"></span>
+      Libre
+    </span>
+    <span style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="adispo" style="width: 16px; height: 16px; display: inline-block; border: 1px solid var(--color-border);"></span>
+      A disponibilidad
+    </span>
+    <span style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="ocupado" style="width: 16px; height: 16px; display: inline-block; border: 1px solid var(--color-border);"></span>
+      Ocupado
+    </span>
+  </div>
   <table>
     <thead>
       <tr>
