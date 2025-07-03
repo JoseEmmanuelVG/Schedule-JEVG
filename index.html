@@ -4,79 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horario Semanal - JEVG</title>
-  <style>
-    :root {
-      --color-libre: #4ade80;         /* verde suave */
-      --color-adispo: #facc15;        /* amarillo cálido */
-      --color-ocupado: #f87171;       /* rojo coral */
-      --color-bg: #f9fafb;
-      --color-text: #111827;
-      --color-border: #d1d5db;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-bg: #1f2937;
-        --color-text: #f3f4f6;
-        --color-border: #374151;
-      }
-    }
-
-    body {
-      margin: 0;
-      padding: 2rem;
-      font-family: system-ui, Inter, sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 1000px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    th, td {
-      border: 1px solid var(--color-border);
-      padding: 0.75rem;
-      text-align: center;
-    }
-
-    th {
-      background-color: var(--color-border);
-      font-weight: 600;
-    }
-
-    .libre {
-      background-color: var(--color-libre);
-    }
-
-    .adispo {
-      background-color: var(--color-adispo);
-    }
-
-    .ocupado {
-      background-color: var(--color-ocupado);
-    }
-
-    @media (max-width: 768px) {
-      table {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Horario Semanal - JEVG</h1>
@@ -86,41 +14,33 @@
     Las franjas en <span class="adispo"><strong>amarillo</strong></span> (a disponibilidad) pueden cambiar con <strong>24 horas de antelación</strong>; de lo contrario, se consideran <span class="ocupado"><strong>ocupadas</strong></span>.
   </p>
 
-  <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
-    <span style="display: flex; align-items: center; gap: 0.5rem;">
-      <span class="libre" style="width: 16px; height: 16px; display: inline-block; border: 1px solid var(--color-border);"></span>
-      Libre
-    </span>
-    <span style="display: flex; align-items: center; gap: 0.5rem;">
-      <span class="adispo" style="width: 16px; height: 16px; display: inline-block; border: 1px solid var(--color-border);"></span>
-      A disponibilidad
-    </span>
-    <span style="display: flex; align-items: center; gap: 0.5rem;">
-      <span class="ocupado" style="width: 16px; height: 16px; display: inline-block; border: 1px solid var(--color-border);"></span>
-      Ocupado
-    </span>
+  <div class="legend">
+    <span><span class="libre"></span> Libre</span>
+    <span><span class="adispo"></span> A disponibilidad</span>
+    <span><span class="ocupado"></span> Ocupado</span>
   </div>
+
   <table>
     <thead>
       <tr>
         <th>Día</th>
         <th>00:00–06:00</th>
         <th>06:00–13:00</th>
-        <th>13:00–19:00</th>
+        <th>13:00–15:30</th>
+        <th>15:30–19:00</th>
         <th>19:00–21:30</th>
         <th>21:30–24:00</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>Lunes</td><td class="ocupado"></td><td class="adispo"></td><td class="adispo"></td><td class="adispo"></td><td class="ocupado"></td></tr>
-      <tr><td>Martes</td><td class="ocupado"></td><td class="adispo"></td><td class="adispo"></td><td colspan="2" class="libre"></td></tr>
-      <tr><td>Miércoles</td><td colspan="5" class="libre"></td></tr>
-      <tr><td>Jueves</td><td colspan="3" class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
-      <tr><td>Viernes</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
-      <tr><td>Sábado</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
-      <tr><td>Domingo</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Lunes</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Martes</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="libre"></td><td colspan="2" class="libre"></td></tr>
+      <tr><td>Miércoles</td><td colspan="6" class="libre"></td></tr>
+      <tr><td>Jueves</td><td colspan="3" class="adispo"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Viernes</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Sábado</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
+      <tr><td>Domingo</td><td class="ocupado"></td><td class="adispo"></td><td class="libre"></td><td class="libre"></td><td class="adispo"></td><td class="ocupado"></td></tr>
     </tbody>
   </table>
 </body>
 </html>
-
